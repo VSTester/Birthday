@@ -236,7 +236,7 @@ function startSparkles() {
 function threePartWordEffect(element, delay = 1200, fireworkTrigger) {
   element.textContent = ""; // clear heading first
 
-  const parts = ["Happy", "Birthday,", "MadamJii"];
+  const parts = ["Happy", "Birthday,", "Madam Jii"]; // added a space in "Madam Jii"
   let i = 0;
 
   function showPart() {
@@ -244,9 +244,14 @@ function threePartWordEffect(element, delay = 1200, fireworkTrigger) {
       const span = document.createElement("span");
       span.textContent = parts[i] + " ";
       span.classList.add("word");
+
+      // ✅ inline-block ensures spacing but allows wrapping
+      span.style.display = "inline-block"; 
+      span.style.marginRight = "6px";      
+
       element.appendChild(span);
 
-      // 🎆 Trigger fireworks synced with word
+      // 🎆 Fireworks trigger
       if (typeof fireworkTrigger === "function") {
         fireworkTrigger();
       }
@@ -258,6 +263,7 @@ function threePartWordEffect(element, delay = 1200, fireworkTrigger) {
 
   showPart();
 }
+
 
 // 🎂 Cake Cutting Button
 const cakeBtn = document.querySelector('.cake-btn');
