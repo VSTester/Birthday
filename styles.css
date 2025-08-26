@@ -493,3 +493,20 @@ body {
   }
 }
 
+
+.balloons-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  pointer-events: none; /* won’t block clicks */
+}
+
+.left-balloons-img {
+  height: 100%;
+  max-height: 100vh; /* auto-resizes with screen */
+  object-fit: contain;
+}
