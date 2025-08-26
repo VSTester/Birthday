@@ -483,7 +483,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 80vh;     /* adjust size */
+  height: 60vh;     /* adjust size */
   width: auto;
   object-fit: contain;
 }
