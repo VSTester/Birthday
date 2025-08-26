@@ -400,10 +400,15 @@ body {
 
 .cake-photo {
   max-width: 320px;
+  max-height: 60vh;   /* ✅ never taller than 60% of screen */
+  width: auto;
+  height: auto;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   animation: popIn 1.2s ease-out;
+  object-fit: contain; /* ✅ keep proportions */
 }
+
 
 @keyframes popIn {
   from { transform: scale(0.5); opacity: 0; }
@@ -422,7 +427,7 @@ body {
 
 /* Next button styling */
 .next-btn {
-  background: linear-gradient(90deg, #ff4da6, #ff0080);
+  background: linear-gradient(90deg, #ff80df, #ff4da6); /* soft-to-deep pink */
   color: white;
   padding: 14px 28px;
   border: none;
@@ -430,68 +435,60 @@ body {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(255, 0, 130, 0.3);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 18px rgba(255, 77, 166, 0.4); /* pink glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 10;
 }
 
 .next-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(255, 77, 166, 0.6); /* brighter glow */
 }
 
-/* Birthday Greeting Page */
+
+/* Final Birthday Page */
 .birthday-page {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, #4facfe, #00f2fe); /* Blue gradient */
+  background: #4facfe; /* fallback blue */
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  overflow: hidden;
   z-index: 3000;
-  animation: fadeInBirthday 1.2s ease-in-out;
 }
 
-@keyframes fadeInBirthday {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.birthday-card {
-  text-align: center;
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  animation: bounceIn 1.2s ease;
-}
-
-@keyframes bounceIn {
-  0% { transform: scale(0.3); opacity: 0; }
-  50% { transform: scale(1.05); opacity: 1; }
-  70% { transform: scale(0.9); }
-  100% { transform: scale(1); }
-}
-
-.birthday-message {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ff0066;
-  margin: 20px 0;
-  text-shadow: 0 0 10px #fff, 0 0 20px #ff99cc;
-}
-
-.birthday-sub {
-  font-size: 1.3rem;
-  color: #444;
-}
-
-.banner {
+/* Background image */
+.birthday-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
+  height: 100%;
+  object-fit: contain;   /* ✅ show full image */
+  object-position: center;
+  z-index: 0;
 }
 
+/* Text overlay */
+.birthday-text {
+  position: absolute;
+  top: 45%;   /* ✅ adjust into the center clear area */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* Responsive tweak for smaller phones */
+@media (max-width: 600px) {
+  .birthday-text {
+    top: 55%;   /* push text a bit lower so it avoids flags */
+    font-size: 1rem;
+  }
+}
