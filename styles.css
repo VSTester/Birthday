@@ -478,12 +478,40 @@ body {
   display: block;
 }
 
-/* Balloons fixed at bottom-left */
-.left-balloons {
+/* Shared balloon styling */
+.balloons {
   position: absolute;
   bottom: 0;
-  left: 0;
-  height: 70vh;     /* adjust size */
+  height: 80%;       /* adjust size for desktop */
   width: auto;
+  pointer-events: none;
   object-fit: contain;
+  z-index: 1;
+}
+
+/* Left side balloons */
+.balloons-left {
+  left: 0;
+}
+
+/* Right side balloons */
+.balloons-right {
+  right: 0;
+}
+
+/* 📱 Mobile view fix */
+@media (max-width: 768px) {
+  .balloons {
+    height: 70vh;
+    width: 45%;      /* each takes half of the screen width */
+    bottom: 0;
+  }
+
+  .balloons-left {
+    left: 0;
+  }
+
+  .balloons-right {
+    right: 0;
+  }
 }
