@@ -184,12 +184,13 @@ body {
 
 /* 🎉 Birthday heading styling */
 .birthday-heading {
-  font-family: 'Great Vibes', cursive;   /* elegant handwriting font */
+  font-family: 'Great Vibes', cursive;
   font-size: 4rem;
   font-weight: normal;
   color: #fff;
   text-align: center;
-  white-space: nowrap; /* ✅ single line */
+  white-space: normal;   /* allow wrapping */
+  word-break: break-word; /* wrap long text if needed */
   margin-bottom: 40px;
   text-shadow:
     0 0 8px #ff66cc,
@@ -197,6 +198,13 @@ body {
     0 0 35px #ff1a8c;
   animation: glowPulse 2s infinite alternate ease-in-out;
 }
+@media (max-width: 600px) {
+  .birthday-heading {
+    font-size: 2.5rem; /* smaller text on small screens */
+    line-height: 1.2;  /* spacing for multi-line */
+  }
+}
+
 
 /* Glow pulse effect */
 @keyframes glowPulse {
