@@ -464,49 +464,26 @@ body {
 }
 
 
+/* Banner at the top */
+.banner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Banner stays full width */
 .birthday-banner {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
-  object-fit: cover;   /* ✅ fills width */
-  object-position: top; /* ✅ always align top */
 }
 
-/* On mobile */
-@media (max-width: 600px) {
-  .birthday-banner {
-    max-height: 180px;
-  }
-}
-
-.banner-section {
-  width: 100%;
-  height: 250px; /* adjust as needed */
-  background: url("images/banner.png") no-repeat top center;
-  background-size: cover;   /* ✅ stretches to fit width */
-}
-
-@media (max-width: 600px) {
-  .banner-section {
-    height: 180px; /* smaller height for mobile */
-  }
-}
-
-
-.balloons-left {
+/* Balloons fixed at bottom-left */
+.left-balloons {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  pointer-events: none; /* won’t block clicks */
-}
-
-.left-balloons-img {
-  height: 100%;
-  max-height: 100vh; /* auto-resizes with screen */
+  height: 80vh;     /* adjust size */
+  width: auto;
   object-fit: contain;
 }
