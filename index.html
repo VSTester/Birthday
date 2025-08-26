@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Surprise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background animated bubbles -->
+  <div class="bubbles"></div>
+
+  <!-- Top floating emoji stickers -->
+  <div class="stickers">
+    <span>✨</span>
+    <span>🎈</span>
+    <span>🍰</span>
+    <span>🎉</span>
+    <span>🎁</span>
+  </div>
+
+  <!-- Center card popup -->
+  <div class="popup-container" id="popupContainer">
+    <div class="popup-card main-card" id="mainCard">
+      ✨ I have something for you…
+    </div>
+    <!-- Initially hidden button and image -->
+    <button id="enterDayBtn" class="reveal-button" style="display:none;">Enter My Day 💖</button>
+    <img id="revealImage" src="https://i.imgur.com/4M7IWwP.png" alt="Cute hug bears" class="reveal-image" style="display:none;" />
+  </div>
+
+  <!-- Celebration View -->
+  <div id="celebrationPage" class="celebration-page" style="display: none;">
+    <canvas id="sparkleCanvas"></canvas>
+    <h1 class="birthday-heading">HappyBirthday,<span>MadamJii</span></h1>
+    <button class="celebrate-btn">Celebrate Our Love</button>
+    <button class="cake-btn">Cake Cutting 🎂</button>
+  </div>
+
+  <!-- 🎂 Cake Page -->
+  <div id="cakePage" class="cake-page" style="display:none;">
+    <h1 class="cake-heading">Let's Cut the Cake! 🎂</h1>
+
+    <!-- Sprinkle Rain Canvas (behind the cake image) -->
+    <canvas id="sprinkleCanvas"></canvas>
+
+    <!-- Cake Image -->
+    <img id="cakePhoto" class="cake-photo" src="cake.png" alt="Birthday Cake">
+
+    <!-- Buttons under cake -->
+    <div class="cake-actions">
+      <button id="nextBtn" class="next-btn">Next ➡</button>
+    </div>
+  </div>
+
+  <!-- 🎈 New Birthday Greeting Page -->
+  <div id="birthdayPage" class="birthday-page" style="display:none;">
+    <div class="birthday-card">
+      <img src="banner.png" alt="Birthday Banner" class="banner" />
+      <h1 class="birthday-message">🎉 HAPPY BIRTHDAY to you! 🎂</h1>
+      <p class="birthday-sub">Wishing you joy, love & celebration! 💖</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
