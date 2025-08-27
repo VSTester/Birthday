@@ -478,40 +478,31 @@ body {
   display: block;
 }
 
-/* Shared balloon styling */
-.balloons {
-  position: absolute;
-  bottom: 0;
-  height: 80%;       /* adjust size for desktop */
-  width: auto;
-  pointer-events: none;
-  object-fit: contain;
-  z-index: 1;
+.balloons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 per row */
+  grid-template-rows: 1fr 1fr;     /* 2 rows */
+  width: 100%;
+  height: calc(100vh - 120px);     /* take remaining height after banner */
+  overflow: hidden;                /* hide extra overflow */
 }
 
-/* Left side balloons */
-.balloons-left {
-  left: 0;
+.balloon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;               /* stretch nicely */
+  display: block;
 }
 
-/* Right side balloons */
-.balloons-right {
-  right: 0;
-}
-
-/* 📱 Mobile view fix */
+/* 📱 Mobile view (keep side by side instead of scroll) */
 @media (max-width: 768px) {
-  .balloons {
-    height: 70vh;
-    width: 45%;      /* each takes half of the screen width */
-    bottom: 0;
+  .balloons-grid {
+    grid-template-columns: 1fr 1fr; /* still 2 side by side */
+    grid-template-rows: 1fr 1fr;    /* 2 rows */
+    height: auto;                   /* let it shrink naturally */
   }
 
-  .balloons-left {
-    left: 0;
-  }
-
-  .balloons-right {
-    right: 0;
+  .balloon {
+    height: auto;
   }
 }
