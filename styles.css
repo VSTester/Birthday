@@ -478,31 +478,26 @@ body {
   display: block;
 }
 
-.balloons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;  /* 2 per row */
-  grid-template-rows: 1fr 1fr;     /* 2 rows */
+/* Balloons container under banner */
+.balloons-container {
   width: 100%;
-  height: calc(100vh - 120px);     /* take remaining height after banner */
-  overflow: hidden;                /* hide extra overflow */
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
-.balloon {
+/* Balloons styling */
+.birthday-balloons {
   width: 100%;
-  height: 100%;
-  object-fit: cover;               /* stretch nicely */
+  height: auto;
+  max-height: 40vh;   /* adjust height relative to screen */
+  object-fit: contain;
   display: block;
 }
 
-/* 📱 Mobile view (keep side by side instead of scroll) */
+/* 📱 Mobile adjustments */
 @media (max-width: 768px) {
-  .balloons-grid {
-    grid-template-columns: 1fr 1fr; /* still 2 side by side */
-    grid-template-rows: 1fr 1fr;    /* 2 rows */
-    height: auto;                   /* let it shrink naturally */
-  }
-
-  .balloon {
-    height: auto;
+  .birthday-balloons {
+    max-height: 30vh;   /* smaller balloons on mobile */
   }
 }
