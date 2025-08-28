@@ -382,7 +382,8 @@ if (nextBtn) {
   nextBtn.addEventListener('click', () => {
     stopSprinkleRain();
     cakePage.style.display = 'none';
-    birthdayPage.style.display = 'flex';
+birthdayPage.style.display = 'flex';
+birthdayPage.classList.add('lastpage');
 
     // 🎈 small bounce animation for card
     const card = birthdayPage.querySelector('.birthday-card');
