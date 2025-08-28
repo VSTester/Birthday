@@ -396,3 +396,35 @@ birthdayPage.classList.add('lastpage');
     }, 50);
   });
 }
+
+// 🎊 Confetti animation
+const confettiCanvas = document.getElementById("confettiCanvas");
+if (confettiCanvas) {
+  const ctx = confettiCanvas.getContext("2d");
+  confettiCanvas.width = window.innerWidth;
+  confettiCanvas.height = window.innerHeight;
+
+  const confetti = Array.from({ length: 100 }).map(() => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 6 + 4,
+    dx: Math.random() * 2 - 1,
+    dy: Math.random() * 3 + 2,
+    color: `hsl(${Math.random() * 360}, 100%, 50%)`
+  }));
+
+  function drawConfetti() {
+    ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+    confetti.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.y > confettiCanvas.height) p.y = -10;
+    });
+    requestAnimationFrame(drawConfetti);
+  }
+  drawConfetti();
+}

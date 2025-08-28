@@ -463,3 +463,45 @@ body {
   z-index: 1200;
   overflow: hidden;         /* ✅ no scroll */
 }
+
+/* ===== Last Page Greeting Card ===== */
+.lastpage-overlay {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.greeting-card {
+  max-width: 80%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  animation: popIn 1s ease-out;
+}
+
+/* ✨ Entry Animation */
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+.gif-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ✅ perfect center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.gif-container img {
+  max-width: 90%;   /* ✅ mobile friendly */
+  height: auto;
+  border-radius: 12px; /* optional */
+}
