@@ -140,6 +140,15 @@ body {
   }
 }
 
+.bubble.image-bubble img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ✅ fills entire bubble */
+  border-radius: 50%;  /* ✅ keeps circular */
+  display: block;
+  pointer-events: none;
+}
+
 /* Reveal button */
 .reveal-button {
   padding: 10px 20px;

@@ -2,8 +2,10 @@
 const bubblesContainer = document.querySelector('.bubbles');
 
 const bubbleImages = [
-  'https://i.imgur.com/4M7IWwP.png',
-  'https://i.imgur.com/8Km9tLL.png'
+  'photo1.jpeg',
+  'photo2.jpeg',
+  'photo3.jpeg',
+  'photo4.jpeg'
 ];
 
 function createBubble() {
