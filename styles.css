@@ -448,7 +448,7 @@ body {
 
 /* ================= FINAL BIRTHDAY PAGE ================= */
 .birthday-page {
-  position: fixed;
+  position: Fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -463,41 +463,29 @@ body {
   overflow-y: auto;
 }
 
-
-/* Banner at the top */
-.banner-container {
+.lastpage-background {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  height: 100%;
+  background: url('lastpage.png') no-repeat center center;
+  background-size: cover; /* stretches to fit full screen */
 }
 
-/* Banner stays full width */
-.birthday-banner {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Balloons container under banner */
-.balloons-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+/* Desktop/tablet: fill the screen */
+#birthdayPage.lastpage {
   position: relative;
-}
-
-/* Balloons styling */
-.birthday-balloons {
   width: 100%;
-  height: auto;
-  max-height: 40vh;   /* adjust height relative to screen */
-  object-fit: contain;
-  display: block;
+  min-height: 100svh;                 /* safe viewport height on mobile too */
+  background: #10aeee url('lastpage.png') no-repeat center top;
+  background-size: cover;             /* fill on large screens */
 }
 
-/* 📱 Mobile adjustments */
-@media (max-width: 768px) {
-  .birthday-balloons {
-    max-height: 30vh;   /* smaller balloons on mobile */
-  }
+.last-page {
+  background: url("lastpage.png") no-repeat center bottom;
+  background-size: contain;  /* keeps full image visible */
+  background-color: #0099ff; /* fallback color for gaps */
+  width: 100vw;
+  height: 100vh;
 }
